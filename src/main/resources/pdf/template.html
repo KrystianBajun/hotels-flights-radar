@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" href="reservation-confirm.css"/>
+</head>
+
+<body>
+<div class='header' th:include="pdf/header::header"></div>
+
+<div th:include="pdf/letterhead::letterhead"></div>
+
+<h1>RESERVATION CONFIRMATION</h1>
+
+<p>Hello [[${name}]] !,</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu erat quis urna fringilla faucibus. Fusce vitae est
+    sed sapien laoreet lacinia maximus quis turpis. Aliquam auctor diam a felis sodales gravida.</p>
+
+<p>Quisque mauris magna, vulputate eget feugiat ut, molestie posuere urna. Etiam volutpat hendrerit efficitur.
+    Vestibulum condimentum volutpat arcu porttitor condimentum. Aliquam vestibulum pulvinar enim sit amet fermentum.
+    Vivamus vulputate, enim id rutrum dictum, enim nibh fermentum mi, vel varius tortor risus at enim. Aliquam
+    scelerisque mi metus, non imperdiet risus interdum eu. Nullam pretium nulla ante, vitae tincidunt neque suscipit in.
+    Nam dapibus iaculis nisl, eget dictum lectus dictum vitae. Ut malesuada justo ligula, sed rhoncus nisl gravida eu.
+    Fusce nulla mi, suscipit at elit ullamcorper, aliquet vehicula odio. Ut molestie ac purus vitae porttitor. Curabitur
+    eget euismod enim, venenatis posuere eros. Ut vel erat in odio varius eleifend. Quisque aliquam odio turpis, sed
+    posuere purus ullamcorper eu.</p>
+
+<p>Quisque mauris magna, vulputate eget feugiat ut, molestie posuere urna. Etiam volutpat hendrerit efficitur.
+    Vestibulum condimentum volutpat arcu porttitor condimentum. Aliquam vestibulum pulvinar enim sit amet fermentum.
+    Vivamus vulputate, enim id rutrum dictum, enim nibh fermentum mi, vel varius tortor risus at enim. Aliquam
+    scelerisque mi metus, non imperdiet risus interdum eu. Nullam pretium nulla ante, vitae tincidunt neque suscipit in.
+    Nam dapibus iaculis nisl, eget dictum lectus dictum vitae. Ut malesuada justo ligula, sed rhoncus nisl gravida eu.
+    Fusce nulla mi, suscipit at elit ullamcorper, aliquet vehicula odio. Ut molestie ac purus vitae porttitor. Curabitur
+    eget euismod enim, venenatis posuere eros. Ut vel erat in odio varius eleifend. Quisque aliquam odio turpis, sed
+    posuere purus ullamcorper eu.</p>
+
+<p><b>Best regards,</b></p>
+
+<p>Cheap Trip Team</p>
+
+<p><b>You find more information on the second page.</b></p>
+
+<div class='footer' th:include="pdf/footer::footer"></div>
+
+<div class="next-page">
+
+    <h2>Flight Details</h2>
+    <p>To add a caption to a table, use the caption tag.</p>
+
+    <table style="width:100%">
+        <caption>Airline: [[${flight.airline}]]</caption>
+        <tr>
+            <th>Departure</th>
+            <th>Destination</th>
+            <th>Flight number</th>
+            <th>Date</th>
+            <th>Price</th>
+
+        </tr>
+        <tr>
+            <td>[[${flight.departure}]]</td>
+            <td>[[${flight.destination}]]</td>
+            <td>[[${flight.flightNumber}]]</td>
+            <td>[[${flight.departureTime}]]</td>
+            <td>[[${flight.price}]][[${flight.currency}]]</td>
+        </tr>
+
+    </table>
+
+
+    <h2>Hotel Details</h2>
+    <p>To add a caption to a table, use the caption tag.</p>
+
+    <table style="width:100%">
+        <caption>Hotel category: [[${hotel.category}]]</caption>
+        <tr>
+            <th>Name</th>
+            <th>Rating</th>
+            <th>Address</th>
+            <th>Phone number</th>
+            <th>Date</th>
+            <th>Price</th>
+
+        </tr>
+        <tr>
+            <td>[[${hotel.name}]]</td>
+            <td>[[${hotel.webRating}]]</td>
+            <td>[[${hotel.address}]]</td>
+            <td>[[${hotel.phone}]]</td>
+            <td>[[${flight.departureTime}]] to [[${flight.returnTime}]]</td>
+            <td>[[${hotel.price}]][[${hotel.currency}]]</td>
+        </tr>
+
+    </table>
+
+
+    <h1>Total Price</h1>
+    <table style="width:130%">
+        <tr>
+
+            <th>Price</th>
+
+        </tr>
+        <tr>
+
+
+            <td>[[${totalPrice}]][[${hotel.currency}]]</td>
+        </tr>
+
+    </table>
+
+
+</div>
+
+
+</div>
+
+<div class='footer' th:include="pdf/footer::footer"></div>
+</body>
+
+</html>

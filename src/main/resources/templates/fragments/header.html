@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<div th:fragment="header">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><i class="glyphicon glyphicon-home"></i></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+                    <li><a href="/hotels">Hotels <span class="sr-only">(current)</span></a></li>
+                    <li sec:authorize="hasAnyRole('ADMIN')"><a href="/admin/addHotel">Add hotel</a></li>
+                    <li sec:authorize="hasAnyRole('ADMIN')"><a href="/admin/dashboard">Dashboard (admin)</a></li>
+                    <li sec:authorize="hasAnyRole('ADMIN')"><a href="/newsletter">Newsletter (admin)</a></li>
+                    <li sec:authorize="hasAnyRole('MODERATOR')"><a href="blog/list">Manage blog</a></li>
+                    <li sec:authorize="hasAnyRole('ROLE_USER')"><a href="/hotels/list/top">Hotel list</a></li>
+                    <li sec:authorize="hasAnyRole('ROLE_USER')"><a href="/Search">Find trip</a></li>
+                    <li sec:authorize="hasAnyRole('ROLE_USER')"><a href="/contact">Contact</a></li>
+                    <li sec:authorize="hasAnyRole('ROLE_USER')"><a href="/final/trip/myList">My trips</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li sec:authorize="hasAnyRole('ROLE_USER')"><a href="users/friends/list">Friends list</a></li>
+                    <li sec:authorize="hasAnyRole('ROLE_USER')"><a href="users/my/profile/edit">Edit profile</a></li>
+                    <li sec:authorize="hasAnyRole('ROLE_USER')"><a href="users/add/post">Add post</a></li>
+                    <li th:if="${#httpServletRequest.remoteUser} != null"><span class="navbar-text"
+                                                                                th:utext="'Hello  <b>' + '<a href=/users/profile/>' + ${#authentication.principal.user.username} + '</a>' + '</b>'"></span></b>
+                    </li>
+                    <li>
+                        <form th:if="${#httpServletRequest.remoteUser} != null" th:action="@{/logout}" method="post">
+                            <input class="btn btn-link navbar-btn" type="submit" value="Log out"></input>
+                        </form>
+                    </li>
+                    <li th:if="${#httpServletRequest.remoteUser} == null"><a href="/users/new">Sign up</a></li>
+                    <li th:if="${#httpServletRequest.remoteUser} == null"><a href="/users/login">Log in</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

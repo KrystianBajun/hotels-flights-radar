@@ -1,0 +1,53 @@
+<div th:fragment="comment-section" xmlns:th="http://www.w3.org/1999/xhtml">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/comment-section.css"/>
+
+    <div class="container" th:each="hotel, rowStat: ${hotels}">
+
+        <center>
+            <td><a th:href="@{|/hotels/new/comment/${hotel.id}|}">
+                <button type="button" class="btn btn-outline-danger">Add comment</button>
+            </a></td>
+        </center>
+
+
+        <h2 class="text-center">Comments about hotel
+            <td td th:text="${hotel.name}"/>
+        </h2>
+
+        <div class="card">
+            <div class="card-body" th:each="comment, rowStat: ${comments}">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img th:src="${'/img/' + comment.User.userProfile.avatar} " width="300" height="300"
+                             class="img img-thumbnail img-fluid">
+                        <p class="text-secondary text-center">
+                        <td td th:text="${comment.date}"/>
+                        </p>
+                    </div>
+                    <div class="col-md-10">
+                        <p>
+                            <a class="float-left" th:href="@{|/users/profile/${comment.user.username}|}"><strong>
+                            <td td th:text="${comment.user.name}"/>
+                            </strong>
+                            </a>
+
+                        </p>
+                         <div class="clearfix"></div>
+
+                        <p>
+                        <td th:text="${comment.text}"/>
+                        </p>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>

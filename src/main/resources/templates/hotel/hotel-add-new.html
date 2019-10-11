@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/hotel-add.css|}"/>
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div th:include="fragments/header"></div>
+
+
+<form action="form_1" th:action="@{/hotelAdd}" th:object="${HotelRequest}" method="post">
+
+    <div class="w3-container">
+
+        <div class="w3-display-container w3-blue" style="height:1000px;">
+            <img src="https://download.hipwallpaper.com/desktop/1680/1050/26/7/sfVeRM.jpg">
+
+            <div class="w3-display-middle w3-padding">
+                <p><input type="text" class="form-control" placeholder="Name" th:field="*{name}"></p>
+                <p><input type="text" class="form-control" placeholder="Site" th:field="*{site}"></p>
+                <p><input type="text" class="form-control" placeholder="Price" th:field="*{price}"></p>
+                <p><input type="text" class="form-control" placeholder="Address" th:field="*{address}"></p>
+                <p><input type="submit" value="Submit"/></p>
+
+
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

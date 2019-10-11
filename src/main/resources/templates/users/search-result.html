@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>User Panel- list of the cheapest trips </title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="css/search-result.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div th:include="fragments/header"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-image">
+                <thead>
+                <tr>
+                    <th scope="col">Price</th>
+                    <th scope="col">Departure</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Airline</th>
+                    <th scope="col">Fly out</th>
+                    <th scope="col">Fly back</th>
+                    <th scope="col">Airline Icon</th>
+                    <th scope="col">Choose</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="flight, rowStat: ${flight}">
+
+                    <td th:text=" ${flight.price}+ ${flight.currency}"></td>
+
+                    <td th:text="${flight.departure}" />
+                    </td>
+                    <td th:text="${flight.destination}" />
+                    </td>
+                    <td th:text="${flight.airline}" />
+                    </td>
+                    <td th:text="${flight.departureTime}" />
+                    </td>
+                    <td th:text="${flight.returnTime}" />
+                    </td>
+
+                    <td class="w-25">
+                        <img th:src="@{'http://pics.avs.io/100/100/' + ${flight.airlineIata} + '.png'}">
+                    </td>
+                    <td>
+                        <a th:href="@{|${flight.id}/chooseFlight|}">
+                            <button type="button" class="btn btn-primary">choose</button>
+                        </a>
+                    </td>
+
+                    </td>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

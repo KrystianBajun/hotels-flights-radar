@@ -1,0 +1,95 @@
+<div th:include="fragments/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/user-profile.css|}"/>
+
+</head>
+<div class="icon-bar">
+    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+    <a href="#" class="google"><i class="fa fa-google"></i></a>
+    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+    <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>
+<body>
+<div class="container">
+    <div class="modal-body" th:each="user, i: ${users}">
+        <center>
+            <img th:src="${'/img/' + user.userProfile.avatar} " name="aboutme" width="140" height="140" border="0"
+                 class="img-circle">
+            <h3 class="media-heading">
+                <br>
+                <p td th:text="${user.name}"/>
+                <small>
+                    <t td th:text="${user.Username}"/>
+                </small>
+            </h3>
+            <span><strong>Best trip: </strong></span>
+            <p th:text="${user.userProfile.interest1}"/></p>
+            <span><strong>I was in: </strong></span>
+            <p th:text="${user.userProfile.interest2}"/></p>
+            <span><strong>Future plans: </strong></span>
+            <p th:text="${user.userProfile.interest3}"/></p>
+        </center>
+        <hr>
+        <center>
+            <p class="text-left">
+            <center><strong>About:</strong></center>
+            <br>
+            <center>
+                <d th:text="${user.userProfile.description}"/>
+            </center>
+            <br>
+            <center>
+                <td><a th:href="@{|/users/invite?username=${user.Username}|}">
+                    <button type="button" class="btn btn-outline-danger">Invite to friendship</button>
+                </a></td>
+            </center>
+            <center>
+                <p> If you are friendship. You can start chat with :
+                    <t th:text="${user.username}"/>
+
+                </p>
+
+                <td>
+                    <a th:href="@{|/users/friends/chat/${user.id}|}">
+                        <button type="button" class="btn btn-outline-danger">
+                            <span class="glyphicon glyphicon-envelope"> Message</span>
+                        </button>
+                    </a>
+                </td>
+            </center>
+        </center>
+    </div>
+    <center>
+        <div class="post_container" th:each="post, i: ${posts}">
+            <div class="post">
+                <div class="post_background">
+                    <div>
+                        <d class="post_title">
+                            <d th:text="${post.title}"/>
+                        </d>
+                    </div>
+                    <p class="message_blurb_p">
+                    <td th:text="${post.post}"/>
+                    </p>
+                    <p class="date">
+                    <p td th:text="${post.date}"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
+</body>
+</html>

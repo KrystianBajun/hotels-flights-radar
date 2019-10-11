@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <form action="#" th:action="@{/connect/historical}" th:object="${TripRequest}" method="post">
+
+        <script type="text/javascript" th:inline="javascript">
+  /*<![CDATA[*/
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+
+        var data = new google.visualization.arrayToDataTable([
+          ['Airline', 'Price [[${Currency}]] '],
+          [ 'Cheapest', [[${cheapest1}]]],
+          [ 'Cheapest 2',[[${cheapest2}]]],
+          [ 'Cheapest 3 ',[[${cheapest3}]]],
+          [ 'Highest', [[${highest1}]]],
+          [ 'Highest 2',[[${highest2}]]],
+          [ 'Highest 3',[[${highest3}]]],
+
+          [ 'Average month price', [[${average}]]],
+
+
+        ]);
+
+        var options = {
+          width: 800,
+          legend: { position: 'none' },
+          chart: {
+            title: 'The cheapest cheapfly prices at  [[${Date}]] ',
+            subtitle: 'from [[${Departure}]] to [[${Destination}]]' },
+          axes: {
+            x: {
+              0: { side: 'top', label: 'White to move'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+       /*]]>*/
+
+        </script>
+        </head>
+<body>
+<div id="top_x_div" style="width: 800px; height: 600px;"></div>
+</body>
+</html>

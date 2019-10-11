@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin panel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<div th:include="fragments/home"></div>
+
+<body>
+
+<div class="container">
+    <h3>Moderator Table</h3>
+    <div class="col-sm-4">
+        <a href="/blog/article/new" class="btn btn-info" role="button">New Article</a>
+        <a href="/" class="btn btn-info" role="button">Return</a>
+        </div>
+
+    <div class="row col-md-12 table-responsive">
+
+        <table id="Article table" class="table">
+
+
+            <thead>
+            <tr>
+                <th>Number</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Image name</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="article, i: ${articles}">
+
+                <td th:text="${article.id}">ID</td>
+                <td th:text="${article.title}">Title</td>
+                <td th:text="${article.status}">Status</td>
+                <td th:text="${article.image}">Image</td>
+
+
+                <td><a th:href="@{|/blog/article/edit/${article.id}|}">
+                    <button type="button" class="btn btn-primary">Edit</button>
+                </a></td>
+                <td><a th:href="@{|/blog/${article.id}/remove|}">
+                    <button type="button" class="btn btn-primary">Delete</button>
+                </a></td>
+                <td><a th:href="@{|/blog/${article.id}/upload|}">
+                    <button type="button" class="btn btn-primary">Upload image</button>
+                </a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

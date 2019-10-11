@@ -1,0 +1,58 @@
+<div th:fragment="blog-footer" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <h1 class="sec-title">Blog Section</h1>
+                    <p class="sec-sub-title">Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan
+                        typesetting.
+                        Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+                        nisi ut aliquid ex ea commodi consequatur?</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12" th:each="blog, hstat : ${blogs}"
+                             th:if="${blog.status} == true">
+                            <div class="blog-post wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="post-img">
+                                    <img class="img-responsive" src="images/post-1.jpg" alt="image">
+                                    <div class="date text-center"><span>15</span><br>Dec</div>
+                                    <ul class="list-inline post-info">
+                                        <li><i class="lnr lnr-eye"></i> 325</li>
+                                        <li><i class="lnr lnr-bubble"></i> 74</li>
+                                        <li class="post-tag text-uppercase">Style</li>
+                                    </ul>
+                                </div>
+                                <div class="blog-details">
+                                    <h4 class="media-heading">
+                                        <td th:text="${blog.title}"/>
+                                        </td></h4>
+                                    <p>
+                                    <td th:text="${blog.text}"/>
+                                    </td></p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        

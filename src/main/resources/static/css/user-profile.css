@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+p{
+font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+.post_container {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  background:  #00aced;
+  margin: 0 0;
+  padding: 0 30px;
+  width: 600px;
+}
+.post {
+  margin: 30px 0;
+}
+.post_background {
+  position: relative;
+  background: #c0deed;
+  color: #545454;
+  padding: 15px;
+  border-radius: 10px;
+}
+.post_image {
+  display: flex;
+}
+.post_text {
+  margin: 0 5px;
+}
+.post_title {
+  font-weight: 800;
+  padding: 40px;
+}
+img {
+  padding-left : 5px;
+  background: white;
+  height: 250px;
+  width: 250px;
+}
+.social_date {
+  display: flex;
+  font-size: 14px;
+  margin: 0;
+}
+.date {
+  padding: 0 5px;
+  margin: 0;
+}
+.d{
+  color: #0084b4;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+t{
+color:#d64d4d;
+}
+d{
+color:#38A1F3;
+}

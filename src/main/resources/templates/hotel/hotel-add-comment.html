@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head>
+<body>
+<div th:include="fragments/home"></div>
+<div class="container">
+    <h1>Add Comment</h1>
+        <form action="#" th:action="@{/hotels/add/comment/{id}(id=${hotel.id})}" th:object="${hotelComments}" method="post">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Add comment</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" th:field="*{text}"></textarea>
+            </div>
+            <br>
+            <p><input class="btn btn-primary" type="submit" value="Submit" /></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Homepage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
+            rel="stylesheet" media="screen"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/main.css|}"/>
+</head>
+<body>
+<div th:include="fragments/header"></div>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>Welcome To Flights & Hotels Search Engine</h1>
+    </div>
+
+    <div class="searchbar">
+        <form class="navbar-form" role="search" action="/users/search" method="get">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Find user" name="username">
+            </div>
+            <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </form>
+    </div>
+
+    <br>
+    <li sec:authorize="hasAnyRole('ROLE_USER','ADMIN','ROLE_MODERATOR')">
+        <div class="notifications">
+            <a href="users/friendship/invitations" class="notification">
+                <span>Friends invitations</span>
+                <span class="badge"> <span th:text="${notifications}"></span></span>
+            </a>
+        </div>
+    </li>
+    <div class='carousel' th:include="home/carousel::carousel"></div>
+    <hr/>
+    <div>
+        <div class="col-md-8 col-md-offset-2 text-center">
+            <h1 class="sec-title">Cheap Hotel Section</h1>
+            <p class="cheap-hotel" id="cheap-hotel-section">
+                The section contains the highest rated hotels by our users. By choosing them you are guaranteed the
+                highest quality of service. We recommend using their offer! If you decide on them you will spend a great
+                time.</p>
+        </div>
+        <div class="col-md-4" th:each="topHotels, hstat : ${hotels}"
+             th:unless="${hstat.index > 2}">
+
+            <h3 align="center">
+                <span th:text="${topHotels.hotel.name}"></span>
+            </h3>
+
+            <img th:src="@{${topHotels.hotel.image}}"
+                 th:unless="${hstat.index > 2 }"
+                 width="360px" height="240px"/>
+            <br>
+            <div class="text-center">
+                <a class="seehotel btn btn-default" th:href="@{|/hotels/show/${topHotels.hotel.id}|}">See more info</a>
+            </div>
+        </div>
+        <div>
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <h1 class="sec-title">Cheap Flight Section</h1>
+                <p class="sec-sub-title">Lorem Ipsum adalah text contoh digunakan didalam industri pencetakan dan
+                    typesetting.
+                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+                    nisi ut aliquid ex ea commodi consequatur?</p>
+            </div>
+            <div class="col-md-4" th:each="flight, hstat : ${flight}"
+                 th:unless="${hstat.index > 2}">
+                <h3 align="center">
+                    <img th:src="@{'http://pics.avs.io/300/300/' + ${flight.airlineIata} + '.png'}">
+                    <span th:text="${flight.departure}"></span>
+                    <span th:text="${flight.destination}"></span>
+                    <br>
+                    <span th:text="${flight.price} + ' '+ ${flight.currency}"></span>
+                </h3>
+                <br>
+                <div class="text-center">
+                    <a class="seehotel btn btn-default" th:href="@{|/flight/${flight.id}|}">See more info</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <h1 class="sec-title">Blog Section</h1>
+                <p class="sec-sub-title">We encourage you to read our articles. Our editorial staff places new articles
+                    on a regular basis, so you can be up to date with the latest travel trends.</p>
+            </div>
+            <div class="col-6 col-lg-4" th:each="blog, hstat : ${blogs}" th:if="${blog.status} == true">
+
+                <h2>
+                    <td th:text="${blog.title}"/>
+                    </td> </h2>
+                <p>
+                <td th:text="${blog.header}"/>
+                </p>
+                <p><a class="btn btn-secondary" th:href="@{|/blog/article/${blog.id}|}" role="button">Read more
+                    &raquo;</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

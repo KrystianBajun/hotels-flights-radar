@@ -1,0 +1,78 @@
+
+
+
+
+html{
+   font-family: 'Be Vietnam';
+  font-size   : 100%;
+
+
+}
+#submit-button{
+
+      font-size : 25px;
+
+
+}
+
+label{
+
+
+    font-family: 'Mansalva', cursive;
+
+    color : white;
+    font-size : 15px;
+
+}
+
+@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap');
+#responsiveForm{
+  background-image: url("https://i.imgur.com/XJpDIcZ.jpg");
+  background-size: cover;
+  background-size: 100% 100%;
+clip-path: polygon(79% 0, 100% 48%, 80% 100%, 0% 100%, 0 52%, 0% 0%);
+
+  min-height: 800px;
+  padding: 80px;
+  padding-top: 300px;
+
+
+}
+
+#submit-batton{
+          padding: 5px 5px;
+  	background:#EF5455;
+
+
+}
+#departure{
+     color : white;
+   font-family: 'Be Vietnam';
+
+}
+
+input[type=date] {
+	padding:25px px;
+	background:#101357;
+	border:none;
+	cursor:pointer;
+	display:inline-block;
+	float:right;
+  clear:right;
+
+
+}
+input[type=text]{
+
+  	background:#101357;
+	padding:25px px;
+	border:none;
+	cursor:pointer;
+	display:inline-block;
+	float:right;
+  clear:right;
+ font-family: 'Be Vietnam';
+  font-size   : 100%;
+
+}

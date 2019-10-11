@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact V13</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="img/icons/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="css/contactform-util.css">
+    <link rel="stylesheet" type="text/css" href="css/contactform.css">
+</head>
+<body>
+<form action="form_2" th:action="@{/send/contact-message}" th:object="${Contact}" method="post">
+
+
+<div class="container-contact100">
+    <div class="contact100-more">
+        <i class="zmdi zmdi-email"></i>
+        Fill contact form
+    </div>
+
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Contact Us
+				</span>
+
+            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <span class="label-input100">Name</span>
+              <p><input class="input100" type="text" name="name" placeholder="Name..." th:field="*{sender}"><p>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                <span class="label-input100">Email</span>
+             <p><input class="input100" type="text" name="email" placeholder="Email addess..."  th:field="*{emailAddress}"><p>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100">
+                <span class="label-input100">Phone</span>
+            <p><input class="input100" type="text" name="phone" placeholder="Phone Number..." th:field="*{phone}"><p>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                <span class="label-input100">Message</span>
+             <p>   <textarea class="input100" name="message" placeholder="Questions/Comments..."  th:field="*{message}"></textarea> <p>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <button class="contact100-form-btn">
+                        Send
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

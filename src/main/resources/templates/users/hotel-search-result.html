@@ -1,0 +1,67 @@
+<div th:include="fragments/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>User Panel- list of the cheapest trips </title>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="css/search-result.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/hotel-search-result.css|}"/>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-image">
+                <thead>
+                <tr>
+                    <th scope="col">Price</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Site</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Choose</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="hotel, hstat: ${hotels}"
+                    th:unless="${hstat.index < 5}">
+
+
+                    <td th:text=" ${hotel.price}+ ${hotel.currency}"></td>
+
+                    <td th:text="${hotel.name}"/>
+                    </td>
+                    <td th:text="${hotel.site}"/>
+                    </td>
+                    <td th:text="${hotel.address}"/>
+                    </td>
+                    <td class="w-25">
+                        <img th:src="@{${hotel.image}}">
+                    </td>
+                    <td>
+                        <a th:href="@{${hotel.hotelLink}}" class="btn btn-info" role="button">Hotel Link</a>
+                    </td>
+                    <td>
+                        <a th:href="@{|${hotel.id}/${flight}/chooseHotel|}">
+                            <button type="button" class="btn btn-info">confirm</button>
+                        </a>
+                    </td>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

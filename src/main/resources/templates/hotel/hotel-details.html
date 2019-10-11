@@ -1,0 +1,143 @@
+<div th:include="fragments/home"></div>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hotel details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
+          rel="stylesheet" media="screen"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/hotel-details.css|}"/>
+</head>
+
+<body>
+<div class="container">
+    <div class="wrapper">
+
+        <section id="sec-about" class="sec-about pt-5 pb-5">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-10 col-lg-8">
+                        <h1 class="h4">About us</h1>
+                        <p class="mt-4 mb-4">We are a company that searches for the cheapest flights and accommodation.
+                            We are here for you! Trust us.</p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+
+                    <div class="col-sm-4">
+                        <h4>saved</h4>
+                        <br>
+                        <p>150 042 EUR</p>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <h4>users</h4>
+                        <br>
+                        <p>71 000 </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h4>goal</h4>
+                        <br>
+                        <p>1</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <h2>Hotel Details</h2>
+            <p>Below are the details of your hotel! Have a nice accommodation.</p>
+        </div>
+
+        <section id="sec-features" class="sec-features pt-5 pb-5">
+            <div class="container" th:each="hotel, rowStat: ${hotels}">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+
+                        <h3 class="h4">Overview</h3>
+                        <p>Name :
+                        <td th:text="${hotel.name}"/>
+                        </p>
+                        <p>Category :
+                        <td th:text=" ${hotel.category}">
+                        </p>
+                        <p>Price :
+                        <td th:text=" ${hotel.price}+ ${hotel.currency}">
+                        </p>
+                        <p>Web Rating :
+                        <td th:text=" ${hotel.webRating}">
+                        </p>
+                        </td>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <img class="hotel-image" th:src="@{${hotel.image}}">
+                        <hr>
+                        <img class="hotel-image" th:src="@{${hotel.image2}}">
+
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row align-items-center">
+                    <div class="col-md-6 ">
+                        <img class="hotel-image" th:src="@{${hotel.image3}}">
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3 class="h4">Description</h3>
+                        <hr/>
+                        <td>
+                        <td th:if="${hotel.describe} == null">
+                            <p>A hotel offering good value for money. Rest and good location guaranteed!</p>
+                        </td>
+                        <td th:text=" ${hotel.describe}">
+                        </td>
+                    </div>
+                </div>
+                <hr>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h3 class="h4">Contact</h3>
+                        <hr/>
+                        <p>Address:
+                        <p th:text=" ${hotel.address}"></p>
+                        <p>Phone:
+                        <p th:text=" ${hotel.phone}"></p>
+                    </div>
+
+        </section>
+        </td>
+
+        <div th:include="fragments/comment-section"></div>
+
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

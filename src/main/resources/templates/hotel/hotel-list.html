@@ -1,0 +1,65 @@
+<div th:include="fragments/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Hotel ranking</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/hotel-list.css|}"/>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-image">
+                <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Ranking place</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Average price</th>
+
+                    <th scope="col">Link</th>
+                    <th scope="col">Choose</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="top, i: ${hotels}">
+                    <td class="w-25">
+                        <img th:src="@{${top.hotel.image}}">
+                    </td>
+                    <td th:text=" ${i.index+1}"></td>
+
+                    <td th:text="${top.hotel.name}"/>
+                    </td>
+                    <td th:text="${top.hotel.address}"/>
+                    </td>
+                    <td th:text=" ${top.hotel.price}+ ${top.hotel.currency}"></td>
+
+                    <td>
+                        <a th:href="@{${top.hotel.hotelLink}}" class="btn btn-info" role="button">link</a>
+
+                    </td>
+                    <td>
+                        <a th:href="@{|/hotels/show/${top.hotel.id}|}">
+                            <button type="button" class="btn btn-info">confirm</button>
+                        </a>
+                    </td>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

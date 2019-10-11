@@ -1,0 +1,63 @@
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+h1,h2,h3,p,a,span{
+font-family: 'Roboto', sans-serif;
+}
+
+
+
+#cheap-hotel-section{;
+}
+
+
+# {
+    width: 555px;
+    height: 400px;
+    background-color: #CCC;
+  }
+
+.starshome{
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.searchbar {
+	text-align: right;
+}
+
+.seehotel {
+	text-align: center;
+}
+
+
+.notifications {
+	text-align: right;
+}
+
+.notification {
+
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  background: grey;
+}
+
+.notification .badge {
+   position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: blue;
+    color: white;
+}

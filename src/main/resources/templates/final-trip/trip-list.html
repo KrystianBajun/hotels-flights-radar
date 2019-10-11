@@ -1,0 +1,73 @@
+<div th:include="fragments/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>My trips</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/hotel-list.css|}"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-image">
+                <thead>
+                <tr>
+                    <th scope="col">Flight to</th>
+                    <th scope="col">Hotel name</th>
+                    <th scope="col">Fly out</th>
+                    <th scope="col">Fly back</th>
+                    <th scope="col">Total price</th>
+                    <th scope="col">isPaid</th>
+                    <th scope="col">Reservation number</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="trip, i: ${trips}">
+
+                    <td th:text="${trip.flight.destination}"/>
+                    </td>
+                    <td th:text="${trip.hotel.name}"/>
+                    </td>
+                    <td th:text="${trip.flight.departureTime}"/>
+                    </td>
+                    <td th:text="${trip.flight.returnTime}"/>
+                    </td>
+                    <td th:text=" ${trip.totalPrice} + ${trip.hotel.currency}"/>
+                    </td>
+                    <td th:text="${trip.Reservation.Paid}"/>
+                    </td>
+                    <td th:text="${trip.Reservation.reservationNumber}"/>
+                    </td>
+                    <td>
+                        <a th:href="@{|/final/trip/summary/${trip.id}|}">
+                            <button type="button" class="btn btn-info">select</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a th:href="@{|/final/trip/myList/remove/${trip.id}|}">
+                            <button type="button" class="btn btn-info">
+
+                                <span class="glyphicon glyphicon-remove"></span>
+
+                            </button>
+                        </a>
+                    </td>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

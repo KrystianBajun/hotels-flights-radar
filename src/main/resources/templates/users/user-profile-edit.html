@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Edit user profile</h1>
+    <div th:fragment="blogform(url)">
+        <form action="#" th:action="@{/users/my/profile/update}" th:object="${profile}" method="post">
+
+
+            <div class="form-group">
+                <label for="interest1">Super-power</label>
+                <textarea class="form-control" id="interest1" rows="1" th:field="*{interest1}"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="interest2">What do You love ?</label>
+                <textarea class="form-control" id="interest2" rows="1" th:field="*{interest2}"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="interest3">Best trip</label>
+                <textarea class="form-control" id="interest3" rows="1" th:field="*{interest3}"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="description">About me</label>
+                <textarea class="form-control" id="description" rows="4"
+                          th:field="*{description}"></textarea>
+            </div>
+
+            <tr>
+
+                <a th:href="@{|/users/my/profile/edit/avatar|}">
+                    <button type="button" class="btn btn-primary">Upload image</button>
+                </a>
+            <tr>
+                <p><input class="btn btn-primary" type="submit" value="Submit"/></p>
+                <p><input class="btn btn-default" type="reset" value="Reset"/></p>
+
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Search flight and hotel</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/search-landing-page.css|}"/>
+
+
+</head>
+
+<section id="contact class" class="container content-section text-center">
+
+    <div class="container-fluid">
+
+
+        <form id="responsiveForm" action="form_1" th:action="@{/connect}" th:object="${TripRequest}" method="post">
+
+            <div class="row">
+
+                <div class="col-sm-7">
+                    <label for="departure">Departure</label>
+                    <input type="text" class="form-control" id="departure" placeholder=" Warsaw (WAW)"
+                           th:field="*{departure}">
+                </div>
+
+                <div class="col-sm-4">
+                    <label for="destination">Destination</label>
+
+                    <input type="text" class="form-control" id="destination" placeholder="New York (JFK)"
+                           th:field="*{destination}">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="fly-out">Fly out</label>
+
+                    <input type="text" class="form-control" id="fly-out" placeholder="Fly out" th:field="*{dateOut}">
+                </div>
+
+                <div class="col-sm-3">
+                    <label for="fly-back">Fly back</label>
+
+                    <input type="text" class="form-control" id="fly-back" placeholder="Fly back" th:field="*{dateBack}">
+                </div>
+                <div class="col-sm-2">
+                    <label for="currency">Currency</label>
+                    <input type="text" class="form-control" id="currency" maxlength="4" size="4" placeholder="EUR"
+                           th:field="*{currency}">
+                </div>
+            </div>
+            <br>
+            <label for="submit-batton" id="submit-button">Ready ?</label>
+            <input type="submit" name="submit" id="submit-batton" class="form-control btn btn-primary" value=" Go "/>
+        </form>
+    </div>
+    </div>
+    </div>
+</section>
+</body>
+</html>

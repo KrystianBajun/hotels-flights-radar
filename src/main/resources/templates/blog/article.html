@@ -1,0 +1,60 @@
+<div th:include="fragments/header"></div>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Homepage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link
+            href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
+            rel="stylesheet" media="screen"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/blog-article.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/general.css|}"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8" th:each="blogs, i : ${blog} ">
+            <h1 class="mt-4">
+                <p th:text="${blogs.title}"></p>
+            </h1>
+            <hr>
+            <p>
+            <td th:text="${blogs.date}"></td>
+            </p>
+            <hr>
+            <img class="img-fluid rounded" th:src="${'/img/' + blogs.image}" alt="" width="750" height="300">
+            <hr>
+            <p class="lead" align="justify">
+            <td th:text="${blogs.header}"></td>
+            </p>
+            <p align="justify">
+            <p th:text="${blogs.text}"></p>
+            </p>
+            <blockquote class="blockquote">
+                <p class="mb-0">
+                <td th:text="${blogs.quote}"></td>
+                </p>
+                <footer class="blockquote-footer">Author :
+                    <cite title="Source Title">
+                        <td th:text="${blogs.author}"></td>
+                    </cite>
+                </footer>
+            </blockquote>
+            <hr>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

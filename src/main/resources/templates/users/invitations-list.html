@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Invitations list</title>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="css/search-result.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div th:include="fragments/header"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-image">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Nick</th>
+                    <th scope="col">Invited You</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="invitation, i: ${invitations}">
+
+
+                    <td th:text="${invitation.inviting.Name}"/>
+                    </td>
+                    <td th:text="${invitation.inviting.Username}"/>
+                    </td>
+                   <!-- <td th:text="${invitation.Pending}"/>
+                    </td>-->
+
+                    <td>
+                        <a th:href="@{|/users/friendship/accept/${invitation.id}/|}">
+                            <button type="button" class="btn btn-primary">Accept</button>
+                        </a>
+                    </td>
+
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

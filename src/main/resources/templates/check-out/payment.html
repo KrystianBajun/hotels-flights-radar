@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>User Panel- list of the cheapest trips </title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="css/payment.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<form action="#" th:action="@{/check-out/pay/{reservation}(reservation=${reservationNumber})}" th:object="${Payment}" method="post">
+
+
+
+
+
+<div class="row">
+
+    <div class="col-75">
+        <div class="container">
+            <form action="/action_page.php">
+
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Billing Address</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                      <p> <input type="text" id="fname" name="firstname" placeholder="Bezimienny Bezimienny" th:field="*{fullName}"> </p>
+
+
+
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                     <p> <input type="text" id="email" name="email" placeholder="john@example.com" th:field="*{email}"> </p>
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                      <p><input type="text" id="adr" name="address" placeholder="Pulawska 102" th:field="*{address}"></p>
+                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                       <p><input type="text" id="city" name="city" placeholder="Warsaw" th:field="*{city}"></p>
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="state">State</label>
+                            <p><input type="text" id="state" name="state" placeholder="Masovian " th:field="*{state}"></p>
+                            </div>
+                            <div class="col-50">
+                                <label for="zip">Zip</label>
+                             <p> <input type="text" id="zip" name="zip" placeholder="00-857" th:field="*{zipCode}"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-50">
+                        <h3>Payment</h3>
+                        <label for="fname">Accepted Cards</label>
+                        <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <label for="cname">Name on Card</label>
+                      <p><input type="text" id="cname" name="cardname" placeholder="Bezimienny Bezimienny" th:field="*{cardHolder}"></p>
+                        <label for="ccnum">Credit card number</label>
+                      <p><input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" th:field="*{cardNumber}"></p>
+                        <label for="expmonth">Exp Month</label>
+                    <p> <input type="text" id="expmonth" name="expmonth" placeholder="September" th:field="*{expMonth}"></p>
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="expyear">Exp Year</label>
+                           <p> <input type="text" id="expyear" name="expyear" placeholder="2018" th:field="*{year}"></p>
+                            </div>
+                            <div class="col-50">
+                                <label for="cvv">CVV</label>
+                             <p><input type="text" id="cvv" name="cvv" placeholder="352" th:field="*{CVV}"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <label>
+                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                </label>
+                <input type="submit" value="Continue to checkout" class="btn">
+            </form>
+        </div>
+    </div>
+
+  </div>

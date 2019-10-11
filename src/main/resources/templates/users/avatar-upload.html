@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add photos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div th:include="fragments/header"></div>
+<div class="container">
+    <div class="page-header"><h1>Upload Avatar</h1></div>
+    <h4>Add avatar</h4>
+
+
+    <form method="post" enctype="multipart/form-data" th:action="@{|avatar/upload|}">
+        <label>File to upload:</label><input type="file" name="files" multiple accept="image/*"><br/>
+        <p><input class="btn btn-primary" type="submit" value="Upload"></p>
+    </form>
+
+    <hr/>
+
+    <p><a th:href="@{|/users/profile/${user.username}|}">Back</a></p>
+</div>
+</body>
+</html>
+
