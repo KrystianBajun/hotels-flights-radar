@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ApplicationController {
 
     @Autowired
-    private HotelRepository hotels;
-
-    @Autowired
     private FlightRepository flights;
 
     @Autowired

@@ -3,10 +3,10 @@ package com.flightradar.flightradar.service.email;
 import com.flightradar.flightradar.model.email.Email;
 import com.flightradar.flightradar.model.trip.flight.Flight;
 import com.flightradar.flightradar.model.user.User;
-import com.flightradar.flightradar.model.trip.UserFinalTrip;
+import com.flightradar.flightradar.model.trip.FinalTrip;
 import com.flightradar.flightradar.repository.FlightRepository;
 import com.flightradar.flightradar.repository.ReservationRepository;
-import com.flightradar.flightradar.repository.UserFinalTripRepository;
+import com.flightradar.flightradar.repository.FinalTripRepository;
 import com.flightradar.flightradar.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -43,11 +43,11 @@ public class EmailSenderImp implements EmailSender {
     FlightRepository flightRepository;
 
     @Autowired
-    UserFinalTrip userFinalTrip;
+    FinalTrip finalTrip;
 
     @Autowired
     private
-    UserFinalTripRepository userFinalTripRepository;
+    FinalTripRepository finalTripRepository;
 
     @Autowired
     private
@@ -94,10 +94,10 @@ public class EmailSenderImp implements EmailSender {
 
     public void isTripFinishedAndPaid() throws ParseException {
         List<Flight> tripFinishedTday = flightRepository.findByReturnTime(ActualDate());
-        List<UserFinalTrip> tripFinishedTdayAndPaid = new ArrayList<>();
+        List<FinalTrip> tripFinishedTdayAndPaid = new ArrayList<>();
         for (Flight tripFinished : tripFinishedTday) {
-            if (userFinalTripRepository.findByflightId(tripFinished.getId()).getReservation().isPaid()) {
-                tripFinishedTdayAndPaid.add(userFinalTripRepository.findByflightId(tripFinished.getId()));
+            if (finalTripRepository.findByflightId(tripFinished.getId()).getReservation().isPaid()) {
+                tripFinishedTdayAndPaid.add(finalTripRepository.findByflightId(tripFinished.getId()));
             }
         }
         if (tripFinishedTdayAndPaid.size() >= 1) {
@@ -105,8 +105,8 @@ public class EmailSenderImp implements EmailSender {
         }
     }
 
-    private void feedBackPassData(List<UserFinalTrip> tripFinishedTdayUsers) {
-        for (UserFinalTrip user : tripFinishedTdayUsers) {
+    private void feedBackPassData(List<FinalTrip> tripFinishedTdayUsers) {
+        for (FinalTrip user : tripFinishedTdayUsers) {
             String email = user.getUser().getEmail();
             Long hotelId = user.getHotel().getId();
             String reservation = user.getReservation().getReservationNumber();

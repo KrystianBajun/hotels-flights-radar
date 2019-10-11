@@ -70,7 +70,7 @@ values
 (2,'xzf6lqy4zb',true,false),
 (3,'vxf6faazb',false,false);
 
-insert into user_final_trip (id,User_Id,hotel_id,flight_id,reservation_id)
+insert into final_trip (id,User_Id,hotel_id,flight_id,reservation_id)
 values
 (1,1,1,1,1),
 (2,2,2,2,2),

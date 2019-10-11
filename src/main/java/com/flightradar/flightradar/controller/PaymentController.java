@@ -1,8 +1,8 @@
 package com.flightradar.flightradar.controller;
 
 import com.flightradar.flightradar.model.payment.Payment;
-import com.flightradar.flightradar.model.trip.UserFinalTrip;
-import com.flightradar.flightradar.repository.UserFinalTripRepository;
+import com.flightradar.flightradar.model.trip.FinalTrip;
+import com.flightradar.flightradar.repository.FinalTripRepository;
 import com.flightradar.flightradar.security.AllowedForUsers;
 import com.flightradar.flightradar.util.ReservationAlreadyPaidException;
 import com.flightradar.flightradar.util.ReservationNotFoundException;
@@ -22,22 +22,22 @@ import static com.flightradar.flightradar.service.Static.CurrentUser;
 public class PaymentController {
 
     @Autowired
-    private UserFinalTripRepository userFinalTripRepository;
+    private FinalTripRepository finalTripRepository;
 
 
     @RequestMapping(value = "/check-out", method = RequestMethod.GET)
     @AllowedForUsers
     public ModelAndView checkOut(Model model) {
 
-        UserFinalTrip userFinalTrip = userFinalTripRepository.findByUser_Id(CurrentUser().getUser().getId());
-        String reservationFromDB = userFinalTrip.getReservation().getReservationNumber();
+        FinalTrip finalTrip = finalTripRepository.findByUser_Id(CurrentUser().getUser().getId());
+        String reservationFromDB = finalTrip.getReservation().getReservationNumber();
 
         if (reservationFromDB == null) {
 
             throw new ReservationNotFoundException();
         }
 
-        boolean isPaid = userFinalTrip.getReservation().isPaid();
+        boolean isPaid = finalTrip.getReservation().isPaid();
 
         if (isPaid) {
 
@@ -57,15 +57,15 @@ public class PaymentController {
     public String pay(@PathVariable("reservationNumber") String reservationNumber, @ModelAttribute("Payment") Payment Payment) {
 
 
-        UserFinalTrip userFinalTrip = userFinalTripRepository.findByUser_Id(CurrentUser().getUser().getId());
-        String reservationFromDB = userFinalTrip.getReservation().getReservationNumber();
+        FinalTrip finalTrip = finalTripRepository.findByUser_Id(CurrentUser().getUser().getId());
+        String reservationFromDB = finalTrip.getReservation().getReservationNumber();
 
         if (reservationFromDB == null || !reservationNumber.equals(reservationFromDB)) {
 
             throw new ReservationNotFoundException();
         }
 
-        boolean isPaid = userFinalTrip.getReservation().isPaid();
+        boolean isPaid = finalTrip.getReservation().isPaid();
 
         if (isPaid) {
 
@@ -74,8 +74,8 @@ public class PaymentController {
 
         }
 
-        userFinalTrip.getReservation().setPaid(true);
-        userFinalTripRepository.save(userFinalTrip);
+        finalTrip.getReservation().setPaid(true);
+        finalTripRepository.save(finalTrip);
 
         return "redirect:/";
     }

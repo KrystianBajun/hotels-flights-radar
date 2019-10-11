@@ -1,10 +1,10 @@
 package com.flightradar.flightradar.controller;
 
-import com.flightradar.flightradar.model.trip.UserFinalTrip;
+import com.flightradar.flightradar.model.trip.FinalTrip;
 import com.flightradar.flightradar.model.trip.flight.Flight;
 import com.flightradar.flightradar.model.trip.hotel.Hotel;
 import com.flightradar.flightradar.model.user.User;
-import com.flightradar.flightradar.repository.UserFinalTripRepository;
+import com.flightradar.flightradar.repository.FinalTripRepository;
 import com.flightradar.flightradar.repository.UserRepository;
 import com.flightradar.flightradar.security.AllowedForUsers;
 import com.flightradar.flightradar.util.FinalTripNotFoundException;
@@ -23,7 +23,7 @@ import static com.flightradar.flightradar.service.Static.CurrentUser;
 
 public class FinalTripController {
     @Autowired
-    private UserFinalTripRepository userFinalTripRepository;
+    private FinalTripRepository finalTripRepository;
     @Autowired
     private UserRepository userRepository;
 
@@ -31,7 +31,7 @@ public class FinalTripController {
     @AllowedForUsers
     public String tripList(Model model) {
         User user = userRepository.findByUsername(CurrentUser().getUser().getUsername());
-        model.addAttribute("trips", userFinalTripRepository.findByUser(user));
+        model.addAttribute("trips", finalTripRepository.findByUser(user));
 
         return "final-trip/trip-list";
     }
@@ -39,9 +39,9 @@ public class FinalTripController {
     @RequestMapping(value = "/myList/remove/{id}", method = RequestMethod.GET)
     @AllowedForUsers
     public String removeTrip(@PathVariable("id") Long id) {
-        UserFinalTrip userFinalTrip = userFinalTripRepository.findById(id).orElse(null);
-        userFinalTripRepository.deleteById(id);
-        if (userFinalTrip != null) {
+        FinalTrip finalTrip = finalTripRepository.findById(id).orElse(null);
+        finalTripRepository.deleteById(id);
+        if (finalTrip != null) {
             return "final-trip/trip-list";
         } else
             return "/";
@@ -51,20 +51,20 @@ public class FinalTripController {
     @RequestMapping(value = "/summary/{id}", method = RequestMethod.GET)
     @AllowedForUsers
     public String tripSummary(@PathVariable("id") Long id, Model model) {
-        UserFinalTrip userFinalTrip = userFinalTripRepository.findById(id).orElse(null);
-        if (userFinalTrip == null) {
+        FinalTrip finalTrip = finalTripRepository.findById(id).orElse(null);
+        if (finalTrip == null) {
             throw new FinalTripNotFoundException();
         }
-        User user = userRepository.findById(userFinalTrip.getId());
+        User user = userRepository.findById(finalTrip.getId());
         if (user == null) {
             throw new UserNotFoundException();
         }
 
-        Flight flight = userFinalTrip.getFlight();
-        Hotel hotel = userFinalTrip.getHotel();
-        String reservationNumber = userFinalTrip.getReservation().getReservationNumber();
+        Flight flight = finalTrip.getFlight();
+        Hotel hotel = finalTrip.getHotel();
+        String reservationNumber = finalTrip.getReservation().getReservationNumber();
 
-        model.addAttribute("isPaid", userFinalTrip.getReservation().isPaid());
+        model.addAttribute("isPaid", finalTrip.getReservation().isPaid());
         model.addAttribute("hotels", hotel);
         model.addAttribute("flights", flight);
         model.addAttribute("reservationNumber", reservationNumber);

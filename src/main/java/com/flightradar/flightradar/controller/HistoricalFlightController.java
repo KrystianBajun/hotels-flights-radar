@@ -77,7 +77,6 @@ public class HistoricalFlightController {
     @AllowedForUsers
     public String chart(@Valid @ModelAttribute("TripRequest") TripRequest tripRequest, ModelMap model) {
 
-
         ArrayList<Historical> historicalList = historicalFlightRepository.findByUserName(CurrentUser().getUsername());
         ArrayList<BigDecimal> pricelist = new ArrayList<>();
         for (int i = 0; i < historicalList.size(); i++) {

@@ -54,7 +54,7 @@ public class UserController {
     CustomUserDetailsService customUserDetailsService;
     @Autowired
     private
-    UserFinalTripRepository userFinalTripRepository;
+    FinalTripRepository finalTripRepository;
     @Autowired
     private
     FriendsRepository friendsRepository;

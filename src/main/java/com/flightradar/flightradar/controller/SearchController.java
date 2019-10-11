@@ -9,10 +9,10 @@ import com.flightradar.flightradar.model.trip.hotel.Comparison;
 import com.flightradar.flightradar.model.trip.hotel.Hotel;
 import com.flightradar.flightradar.model.user.User;
 import com.flightradar.flightradar.model.trip.Reservation;
-import com.flightradar.flightradar.model.trip.UserFinalTrip;
+import com.flightradar.flightradar.model.trip.FinalTrip;
 import com.flightradar.flightradar.repository.FlightRepository;
 import com.flightradar.flightradar.repository.HotelRepository;
-import com.flightradar.flightradar.repository.UserFinalTripRepository;
+import com.flightradar.flightradar.repository.FinalTripRepository;
 import com.flightradar.flightradar.repository.UserRepository;
 import com.flightradar.flightradar.security.AllowedForUsers;
 import com.flightradar.flightradar.service.connect.ConnectServiceFlight;
@@ -77,10 +77,10 @@ public class SearchController {
 
     @Autowired
     private
-    UserFinalTripRepository userFinalTripRepository;
+    FinalTripRepository finalTripRepository;
 
     @Autowired
-    UserFinalTrip userFinalTrip;
+    FinalTrip finalTrip;
 
     @Autowired
     private
@@ -172,7 +172,7 @@ public class SearchController {
     public String chooseFlight(@PathVariable("flight.id") long flightId, RedirectAttributes redirectAttributes) {
 
         User user = userRepository.findById(CurrentUser().getUser().getId());
-        UserFinalTrip userFinalTrip = new UserFinalTrip();
+        FinalTrip finalTrip = new FinalTrip();
 
 
         Long passId = flightId;
@@ -204,26 +204,26 @@ public class SearchController {
 
 
         User userTemp = userRepository.findById(CurrentUser().getUser().getId());
-        UserFinalTrip userFinalTrip = new UserFinalTrip();
+        FinalTrip finalTrip = new FinalTrip();
         Reservation reservation = new Reservation();
 
         reservation.setReservationNumber(RandomGenerator());
-        userFinalTrip.setReservation(reservation);
+        finalTrip.setReservation(reservation);
 
 
         BigDecimal flightPrice = flightRepository.findById(flightId).get().getPrice();
         BigDecimal hotelPrice = hotelRepository.findById(hotelId).get().getPrice();
         BigDecimal totalPrice = flightPrice.add(hotelPrice);
 
-        userFinalTrip.setFlight(flight);
-        userFinalTrip.setHotel(hotel);
+        finalTrip.setFlight(flight);
+        finalTrip.setHotel(hotel);
 
-        userFinalTrip.setTotalPrice(totalPrice);
-        userFinalTrip.setReservation(reservation);
+        finalTrip.setTotalPrice(totalPrice);
+        finalTrip.setReservation(reservation);
 
-        userTemp.add(userFinalTrip);
+        userTemp.add(finalTrip);
 
-        userFinalTripRepository.save(userFinalTrip);
+        finalTripRepository.save(finalTrip);
 
 
         final ModelAndView redirect = new ModelAndView("redirect:/final/trip/myList");

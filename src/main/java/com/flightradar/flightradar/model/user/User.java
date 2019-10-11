@@ -2,7 +2,7 @@ package com.flightradar.flightradar.model.user;
 
 import com.flightradar.flightradar.model.comments.Messages;
 import com.flightradar.flightradar.model.friends.Friendship;
-import com.flightradar.flightradar.model.trip.UserFinalTrip;
+import com.flightradar.flightradar.model.trip.FinalTrip;
 
 import javax.persistence.*;
 import java.util.*;
@@ -24,7 +24,7 @@ public class User {
             cascade = {CascadeType.DETACH, CascadeType.PERSIST,
                     CascadeType.PERSIST, CascadeType.REFRESH}
     )
-    private List<UserFinalTrip> userFinalTrip;
+    private List<FinalTrip> finalTrip;
 
     @ManyToOne
     private Authority authority;
@@ -101,12 +101,12 @@ public class User {
         this.authority = authority;
     }
 
-    public List<UserFinalTrip> getUserFinalTrip() {
-        return userFinalTrip;
+    public List<FinalTrip> getFinalTrip() {
+        return finalTrip;
     }
 
-    public void setUserFinalTrip(List<UserFinalTrip> userFinalTrip) {
-        this.userFinalTrip = userFinalTrip;
+    public void setFinalTrip(List<FinalTrip> finalTrip) {
+        this.finalTrip = finalTrip;
     }
 
     public Set<Friendship> getFriendRequests() {
@@ -125,13 +125,14 @@ public class User {
         this.friends = friends;
     }
 
-    public void add(UserFinalTrip finalTrip) {
+    public void add(FinalTrip trip) {
 
-        if (userFinalTrip == null) {
-            userFinalTrip = new ArrayList<>();
+        if (trip == null) {
+            finalTrip = new ArrayList<>();
         }
-        userFinalTrip.add(finalTrip);
-        finalTrip.setUser(this);
+
+        finalTrip.add(trip);
+        trip.setUser(this);
 
     }
 
@@ -159,15 +160,15 @@ public class User {
         this.messages = messages;
     }
 
-
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", userFinalTrip=" + userFinalTrip +
+                ", finalTrip=" + finalTrip +
                 ", authority=" + authority +
                 ", friendRequests=" + friendRequests +
                 ", friends=" + friends +

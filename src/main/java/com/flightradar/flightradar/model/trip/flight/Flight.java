@@ -1,7 +1,7 @@
 package com.flightradar.flightradar.model.trip.flight;
 
 import com.flightradar.flightradar.model.trip.hotel.Hotel;
-import com.flightradar.flightradar.model.trip.UserFinalTrip;
+import com.flightradar.flightradar.model.trip.FinalTrip;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -52,7 +52,7 @@ public class Flight {
 
 
     @OneToOne(mappedBy = "flight")
-    UserFinalTrip userFinalTrip;
+    FinalTrip finalTrip;
 
 
     public Flight() {

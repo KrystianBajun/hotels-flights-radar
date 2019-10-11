@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Component
-public class UserFinalTrip {
+public class FinalTrip {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,7 +36,7 @@ public class UserFinalTrip {
     @JoinColumn(name = "flight_id", referencedColumnName = "id")
     private Flight flight;
 
-    public UserFinalTrip() {
+    public FinalTrip() {
     }
 
     public long getId() {

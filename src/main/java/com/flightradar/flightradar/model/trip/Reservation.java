@@ -11,7 +11,7 @@ public class Reservation {
     private boolean rated;
 
     @OneToOne(mappedBy = "reservation")
-    UserFinalTrip userFinalTrip;
+    FinalTrip finalTrip;
 
 
     @Id

@@ -1,11 +1,11 @@
 package com.flightradar.flightradar.controller;
 
 
-import com.flightradar.flightradar.model.trip.UserFinalTrip;
+import com.flightradar.flightradar.model.trip.FinalTrip;
 import com.flightradar.flightradar.model.trip.flight.Flight;
 import com.flightradar.flightradar.model.trip.hotel.Hotel;
 import com.flightradar.flightradar.model.user.User;
-import com.flightradar.flightradar.repository.UserFinalTripRepository;
+import com.flightradar.flightradar.repository.FinalTripRepository;
 import com.flightradar.flightradar.repository.UserRepository;
 import com.flightradar.flightradar.security.AllowedForUsers;
 import com.flightradar.flightradar.service.pdf.PDFService;
@@ -36,7 +36,7 @@ public class PDFController {
     PDFService pdfService;
     @Autowired
     private
-    UserFinalTripRepository userFinalTripRepository;
+    FinalTripRepository finalTripRepository;
     @Autowired
     private
     UserRepository userRepository;
@@ -45,22 +45,22 @@ public class PDFController {
     @AllowedForUsers
     public String generatePDF() throws Exception {
 
-        UserFinalTrip userFinalTrip = userFinalTripRepository.findByUser_Id(CurrentUser().getUser().getId());
+        FinalTrip finalTrip = finalTripRepository.findByUser_Id(CurrentUser().getUser().getId());
 
-        if (userFinalTrip == null) {
+        if (finalTrip == null) {
             throw new FinalTripNotFoundException();
         }
 
-        User user = userRepository.findById(userFinalTrip.getId());
+        User user = userRepository.findById(finalTrip.getId());
         if (user == null) {
             throw new FinalTripNotFoundException();
         }
 
-        Flight flight = userFinalTrip.getFlight();
-        Hotel hotel = userFinalTrip.getHotel();
+        Flight flight = finalTrip.getFlight();
+        Hotel hotel = finalTrip.getHotel();
 
-        String reservationNumber = userFinalTrip.getReservation().getReservationNumber();
-        BigDecimal totalPrice = userFinalTrip.getTotalPrice();
+        String reservationNumber = finalTrip.getReservation().getReservationNumber();
+        BigDecimal totalPrice = finalTrip.getTotalPrice();
         try {
             pdfService.generateBarCode(reservationNumber);
         } catch (Exception e) {
