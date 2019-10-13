@@ -37,12 +37,16 @@ Containing inter alia :
 <center>
   <img src="https://i.imgur.com/4wvdhoN.jpg"  alt="Github">
 </center>
-Search engine for your journey.
+
+## Search engine 
+
 Four APIs are connected to the application :
+
 - the first one checks air connections
 - the second is responsible for providing information about hotels
 - the third one searches additional information in google for example the overall rating and hotel photos
 - the app constantly updates the exchange rate so provide the real price of the trip
+
 <center>
   <img src="https://i.imgur.com/5i5Fbrc.jpg"  alt="Github">
 </center>
