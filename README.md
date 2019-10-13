@@ -145,3 +145,28 @@ Four APIs are connected to the application :
   <img src="https://i.imgur.com/2rhyWu5.png"  alt="invitations-list">
 </center>
 
+## User profile
+
+each user can:
+- add posts
+- edit profile information
+- change photos
+
+<center> 
+  <img src="https://i.imgur.com/myYwRbh.png"  alt="profile">
+</center>
+<center> 
+  <img src="https://i.imgur.com/vyWt8AO.png"  alt="profile-edit">
+</center>
+
+- friends list
+
+<center> 
+  <img src="https://i.imgur.com/oRIoNHc.png"  alt="profile-edit">
+</center>
+
+## Chat with friends
+
+<center> 
+  <img src="https://i.imgur.com/HnkuUjR.png"  alt="profile-edit">
+</center>
