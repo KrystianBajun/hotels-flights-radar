@@ -1,4 +1,5 @@
 # flights-hotels-app
+
 <center>
   <img width="460" height="300" src="https://i.imgur.com/C9IvdBD.png">
 <center>
@@ -6,6 +7,7 @@
 <h4 style="text-align: center" align="middle"> Low-cost Hotels and Flights search engine</h4>
 
 ## Overview
+
 A web application dedicated to traveling in the cheapest way possible.
 Containing inter alia :
 - the ability to search and choose the cheapest flights and hotels
@@ -27,11 +29,13 @@ Containing inter alia :
 * Bootstrap
 
 ### To do
+
 - [ ] Dockerizing 
 - [ ] Detailed description of the project
 
 
 ## Main Page
+
  - Real time notifications. Top three hotels based on ranking. Blog section.
  
 <center>
@@ -70,6 +74,7 @@ Four APIs are connected to the application :
 </center>
 
 ## Trip summary
+
 - details about reservation, graph shows price information inter alia: minimal,highest,median, and average from last two years.
 
 <center>
@@ -83,6 +88,7 @@ Four APIs are connected to the application :
 </center>
 
 ## Confirmation
+
 - reservation confirmation in form of pdf document
 
 <center>
@@ -99,9 +105,11 @@ Four APIs are connected to the application :
 </center>
 
 ## Hotel ranking
+
 - based on votes. 
 - only users who have used the selected accommodation and paid can rate. 
 - on the last day of stay, an email arrives asking for review.
+
 <center>
   <img src="https://i.imgur.com/11ZLk49.png"  alt="Github">
 </center>
@@ -113,5 +121,26 @@ Four APIs are connected to the application :
   <img src="https://i.imgur.com/a5G7yGm.png"  alt="Github">
 </center>
 
+## Friends system
 
+- user invite to friends.
+
+<center> 
+  <img src="https://i.imgur.com/uJua0u5.png" alt="invite">
+</center>
+<center> 
+  <img src="https://i.imgur.com/IBWCf6j.png" alt="conf">
+</center>
+
+- notifications system
+
+<center> 
+  <img src="https://i.imgur.com/92El6Fq.png"  alt="notifications">
+</center>
+
+- invitations list 
+
+<center> 
+  <img src="https://i.imgur.com/2rhyWu5.png"  alt="invitations-list">
+</center>
 
