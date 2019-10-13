@@ -36,6 +36,11 @@ Main Page. Real time notifications. Top three hotels based on ranking. Blog sect
 </center>
 
 Search engine for your journey.
+Four APIs are connected to the application :
+- the first one checks air connections
+- the second is responsible for providing information about hotels
+- the third one searches additional information in google for example the overall rating and hotel photos
+- the app constantly updates the exchange rate so provide the real price of the trip
 <center>
   <img src="https://i.imgur.com/5i5Fbrc.jpg"  alt="Github">
 </center>
@@ -50,8 +55,7 @@ List of the cheapest hotels.
   <img src="https://i.imgur.com/MDrSWcn.png"  alt="Github">
 </center>
 
-Hotel ranking based on votes.Only users who have used the selected accommodation and paid can rate. On the last day of stay, an email arrives asking for review.
-
+Hotel ranking based on votes. Only users who have used the selected accommodation and paid can rate. On the last day of stay, an email arrives asking for review.
 <center>
   <img src="https://i.imgur.com/11ZLk49.png"  alt="Github">
 </center>
