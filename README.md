@@ -66,7 +66,7 @@ Four APIs are connected to the application :
 </center>
 
 ## Trip summary
--details about reservation, graph shows price information inter alia: minimal,highest,median, and average from last two years.
+- details about reservation, graph shows price information inter alia: minimal,highest,median, and average from last two years.
 
 <center>
   <img src="https://i.imgur.com/sHytzS8.png" alt="Github">
@@ -79,7 +79,7 @@ Four APIs are connected to the application :
 </center>
 
 ## Confirmation
--reservation confirmation in form of pdf document
+- reservation confirmation in form of pdf document
 
 <center>
   <img src="https://i.imgur.com/pZObvTr.png" alt="Github">
@@ -95,16 +95,16 @@ Four APIs are connected to the application :
 </center>
 
 ## Hotel ranking
--based on votes. 
--only users who have used the selected accommodation and paid can rate. 
--on the last day of stay, an email arrives asking for review.
+- based on votes. 
+- only users who have used the selected accommodation and paid can rate. 
+- on the last day of stay, an email arrives asking for review.
 <center>
   <img src="https://i.imgur.com/11ZLk49.png"  alt="Github">
 </center>
 
 ## Hotel info
 
--detailed informations about the selected hotel. Below are comments posted by users.
+- detailed informations about the selected hotel. Below are comments posted by users.
 <center> 
   <img src="https://i.imgur.com/a5G7yGm.png"  alt="Github">
 </center>
