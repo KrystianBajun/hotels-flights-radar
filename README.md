@@ -16,7 +16,7 @@ Containing inter alia :
 - social media elements: friends, adding posts, sending messages, profile page, notifications
 - commenting and rating travel, hotel ranking - dynamic update
 - blog
-- real time exchange rate 
+- real time api exchange rate 
 
 ## Technologies used
 
@@ -30,18 +30,29 @@ Containing inter alia :
 - [ ] Dockerizing 
 - [ ] Detailed description of the project
 
+Main Page. Real time notifications. Top three hotels based on ranking. Blog section.
 <center>
   <img src="https://i.imgur.com/4wvdhoN.jpg"  alt="Github">
 </center>
 
+Search engine for your journey.
 <center>
   <img src="https://i.imgur.com/5i5Fbrc.jpg"  alt="Github">
 </center>
-<center>
-  <img src="https://i.imgur.com/TYmcSoa.png"  alt="Github">
-</center>
+
+List of the cheapest flights.
 <center>
   <img src="https://i.imgur.com/TYmcSoa.png"  alt="Github">
 </center>
 
+List of the cheapest hotels.
+<center>
+  <img src="https://i.imgur.com/MDrSWcn.png"  alt="Github">
+</center>
+
+Hotel ranking based on votes.Only users who have used the selected accommodation and paid can rate. On the last day of stay, an email arrives asking for review.
+
+<center>
+  <img src="https://i.imgur.com/11ZLk49.png"  alt="Github">
+</center>
 
