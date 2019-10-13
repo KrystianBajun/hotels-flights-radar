@@ -155,6 +155,9 @@ each user can:
 <center> 
   <img src="https://i.imgur.com/myYwRbh.png"  alt="profile">
 </center>
+
+- edit
+
 <center> 
   <img src="https://i.imgur.com/vyWt8AO.png"  alt="profile-edit">
 </center>
