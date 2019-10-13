@@ -90,6 +90,7 @@ Four APIs are connected to the application :
 ## Confirmation
 
 - reservation confirmation in form of pdf document
+- each has unique bar code
 
 <center>
   <img src="https://i.imgur.com/pZObvTr.png" alt="Github">
