@@ -14,7 +14,7 @@ Containing inter alia :
 - saving information about hotels and air connections to the database
 - mailing - newsletter, contact, booking evaluation
 - booking management
-- rolls on the site (administrator, moderator, user)
+- roles on the site (administrator, moderator, user)
 - social media elements: friends, adding posts, sending messages, profile page, notifications
 - commenting and rating travel, hotel ranking - dynamic update
 - blog
