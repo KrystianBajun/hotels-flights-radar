@@ -303,5 +303,8 @@ each user can:
 
 
 
-
+#### H2 Database 
+Application uses h2 database
+* user: root
+* password: empty
 
