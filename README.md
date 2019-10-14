@@ -8,7 +8,7 @@
 
 ## Overview
 
-A web application dedicated to traveling in the cheapest way possible.
+A web application is dedicated for users traveling in the cheapest possible way.
 Containing inter alia :
 - the ability to search and choose the cheapest flights and hotels
 - saving information about hotels and air connections to the database
