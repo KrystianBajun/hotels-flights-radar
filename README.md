@@ -95,10 +95,10 @@ Four APIs are connected to the application :
 - each has unique bar code
 
 <center>
-  <img src="https://i.imgur.com/pZObvTr.png" alt="Github">
+  <img src="https://i.imgur.com/SirqUQu.png" alt="Github">
 </center>
 <center>
-  <img src="https://i.imgur.com/R9aq8il.png" alt="Github">
+  <img src="https://i.imgur.com/40y2jdC.png" alt="Github">
 </center>
 
 ## Contact form
