@@ -112,7 +112,7 @@ Four APIs are connected to the application :
 ## Hotel ranking
 
 - based on votes. 
-- only users who have used the selected accommodation and paid can rate. 
+- only users who have chosen and paid for the accommodation can rate. 
 
 <center>
   <img src="https://i.imgur.com/11ZLk49.png"  alt="Github">
