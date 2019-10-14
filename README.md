@@ -30,9 +30,6 @@ Containing inter alia :
 * Maven
 * H2 Database
 
-### To do
-
-- [ ] Dockerizing 
 
 
 ## Main Page
