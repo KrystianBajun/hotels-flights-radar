@@ -58,7 +58,7 @@ Five APIs are connected to the application :
 
 
 <center>
-  <img src="https://i.imgur.com/5i5Fbrc.jpg"  alt="Github">
+  <img src="https://i.imgur.com/5i5Fbrc.jpg"  alt="search-bar">
 </center>
 
 ## List of the cheapest flights.
@@ -94,7 +94,7 @@ Five APIs are connected to the application :
 ## Detailed price information
 
 - the app calculates detailed price information
-- 
+- based on information provided by historical Api data
 - graph shows inter alia: minimal,highest, median, and average price from last two years.
 
 <center>
@@ -105,7 +105,7 @@ Five APIs are connected to the application :
 - users can pay for reservation 
 
 <center>
-  <img src="https://i.imgur.com/1zHhTuf.png" alt="Github">
+  <img src="https://i.imgur.com/1zHhTuf.png" alt="payment">
 </center>
 
 ## Confirmation
@@ -130,14 +130,14 @@ Five APIs are connected to the application :
 
 
 <center>
-  <img src="https://i.imgur.com/11ZLk49.png"  alt="Github">
+  <img src="https://i.imgur.com/11ZLk49.png"  alt="hotel-ranking">
 </center>
 
 - on the last day of stay, an email arrives asking for review.
 
 
 <center>
-  <img src="https://i.imgur.com/qHutqAo.png"  alt="Github">
+  <img src="https://i.imgur.com/qHutqAo.png"  alt="rank-email">
 </center>
 
 
@@ -148,12 +148,12 @@ Five APIs are connected to the application :
 
 
 <center> 
-  <img src="https://i.imgur.com/a5G7yGm.png"  alt="Github">
+  <img src="https://i.imgur.com/a5G7yGm.png"  alt="hotel-info">
 </center>
 
 ## Friends system
 
-- user invite to friends.
+- invite to friends.
 
 
 <center> 
@@ -221,6 +221,7 @@ each user can:
   <img src="https://i.imgur.com/H0R9v9w.png" alt="contact-form">
   
 </center>
+
 ## Chat 
 
 - sending / receiving messages
@@ -253,7 +254,7 @@ each user can:
 
 
 <center> 
-  <img src="https://i.imgur.com/UlVYxSB.png"  alt="article">
+  <img src="https://i.imgur.com/UlVYxSB.png"  alt="blog-article">
 </center>
 
 ## Moderator
@@ -264,27 +265,27 @@ each user can:
 
 
 <center> 
-  <img src="https://i.imgur.com/QxpBusK.png"  alt="article">
+  <img src="https://i.imgur.com/QxpBusK.png"  alt="moderator">
 </center>
 
 - add new article
 
 
 <center> 
-  <img src="https://i.imgur.com/5Pns1Av.png"  alt="article">
+  <img src="https://i.imgur.com/5Pns1Av.png"  alt="add-article">
 </center>
 
 - edition of the current article
 
 
 <center> 
-  <img src="https://i.imgur.com/JbKAb4U.png"  alt="article">
+  <img src="https://i.imgur.com/JbKAb4U.png"  alt="edit-article">
 </center>
 
 - upload photos
 
 <center> 
-  <img src="https://i.imgur.com/lV3wYJV.png"  alt="article">
+  <img src="https://i.imgur.com/lV3wYJV.png"  alt="upload-photo">
 </center>
 
 ## Email System
@@ -295,7 +296,7 @@ each user can:
 
 
 <center> 
-  <img src="https://i.imgur.com/CryIdCW.png"  alt="article">
+  <img src="https://i.imgur.com/CryIdCW.png"  alt="email-sys">
 </center>
 
 
