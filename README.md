@@ -158,6 +158,15 @@ Four APIs are connected to the application :
 
 ## User profile
 
+- log-in / create new user
+<center> 
+  <img src="https://i.imgur.com/2JY6067.png"  alt="profile">
+</center>
+<center> 
+  <img src="https://i.imgur.com/EVamDoP.png"  alt="profile">
+</center>
+
+
 each user can:
 - add posts
 - edit profile information
@@ -240,7 +249,6 @@ each user can:
 - The application is connected to a Google email account.
 - Messages sent by users come to this email address
 - newsletter and messages are sent via this address
-
 
 <center> 
   <img src="https://i.imgur.com/CryIdCW.png"  alt="article">
