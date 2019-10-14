@@ -48,11 +48,12 @@ Containing inter alia :
 
 ## Search engine 
 
-Four APIs are connected to the application :
+Five APIs are connected to the application :
 
 - the first one checks air connections
 - the second is responsible for providing information about hotels
 - the third one searches additional information in google for example the overall rating and hotel photos
+- the fourth searches for information on historical flight prices
 - the app constantly updates the exchange rate so provide the real price of the trip
 
 
@@ -64,21 +65,21 @@ Four APIs are connected to the application :
 
 
 <center>
-  <img src="https://i.imgur.com/TYmcSoa.png"  alt="Github">
+  <img src="https://i.imgur.com/TYmcSoa.png"  alt="flight-list">
 </center>
 
 ## List of the cheapest hotels.
 
 
 <center>
-  <img src="https://i.imgur.com/MDrSWcn.png"  alt="Github">
+  <img src="https://i.imgur.com/MDrSWcn.png"  alt="hotel-list">
 </center>
 
 ## The ability to manage travels
 
 
 <center>
-  <img src="https://i.imgur.com/23SLuAC.png" alt="Github">
+  <img src="https://i.imgur.com/23SLuAC.png" alt="manage">
 </center>
 
 ## Trip summary
@@ -87,17 +88,21 @@ Four APIs are connected to the application :
 
 
 <center>
-  <img src="https://i.imgur.com/sHytzS8.png" alt="Github">
+  <img src="https://i.imgur.com/sHytzS8.png" alt="summary">
 </center>
 
--graph shows price information inter alia: minimal,highest,median, and average from last two years.
+## Detailed price information
+
+- the app calculates detailed price information
+- 
+- graph shows inter alia: minimal,highest, median, and average price from last two years.
 
 <center>
   <img src="https://i.imgur.com/xiZUbSN.png" alt="graphs">
 </center>
 
 ## Payment simulation
-
+- users can pay for reservation 
 
 <center>
   <img src="https://i.imgur.com/1zHhTuf.png" alt="Github">
@@ -106,7 +111,7 @@ Four APIs are connected to the application :
 ## Confirmation
 
 - reservation confirmation in form of pdf document
-- each has unique bar code
+- each have unique bar code
 
 
 <center>
@@ -114,13 +119,6 @@ Four APIs are connected to the application :
 </center>
 <center>
   <img src="https://i.imgur.com/Ixae6dq.png" alt="conf-2">
-</center>
-
-## Contact form
-
-
-<center>
-  <img src="https://i.imgur.com/H0R9v9w.png" alt="Github">
 </center>
 
 
@@ -216,6 +214,13 @@ each user can:
   <img src="https://i.imgur.com/oRIoNHc.png"  alt="profile-edit">
 </center>
 
+## Contact form
+
+
+<center>
+  <img src="https://i.imgur.com/H0R9v9w.png" alt="contact-form">
+  
+</center>
 ## Chat 
 
 - sending / receiving messages
