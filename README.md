@@ -145,7 +145,7 @@ Five APIs are connected to the application :
 
 ## Hotel info
 
-- detailed informations about the selected hotel.
+- detailed information about the selected hotel.
 - below are comments posted by logged users.
 
 
