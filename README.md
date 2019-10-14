@@ -133,8 +133,9 @@ Five APIs are connected to the application :
   <img src="https://i.imgur.com/11ZLk49.png"  alt="hotel-ranking">
 </center>
 
-- on the last day of stay, an email arrives asking for review.
-
+- on the last day of stay, on the user email adress is sent an email 
+- contains a request for rate
+- based on the ratings, the total rating of the hotel is calculated
 
 <center>
   <img src="https://i.imgur.com/qHutqAo.png"  alt="rank-email">
@@ -144,7 +145,8 @@ Five APIs are connected to the application :
 
 ## Hotel info
 
-- detailed informations about the selected hotel. Below are comments posted by users.
+- detailed informations about the selected hotel.
+- below are comments posted by logged users.
 
 
 <center> 
