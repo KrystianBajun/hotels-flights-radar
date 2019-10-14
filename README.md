@@ -104,18 +104,27 @@ Four APIs are connected to the application :
 ## Contact form
 
 <center>
-  <img src="https://i.imgur.com/A05aGGT.png" alt="Github">
+  <img src="https://i.imgur.com/H0R9v9w.png" alt="Github">
 </center>
+
+
 
 ## Hotel ranking
 
 - based on votes. 
 - only users who have used the selected accommodation and paid can rate. 
-- on the last day of stay, an email arrives asking for review.
 
 <center>
   <img src="https://i.imgur.com/11ZLk49.png"  alt="Github">
 </center>
+
+- on the last day of stay, an email arrives asking for review.
+
+<center>
+  <img src="https://i.imgur.com/qHutqAo.png"  alt="Github">
+</center>
+
+
 
 ## Hotel info
 
