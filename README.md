@@ -36,7 +36,9 @@ Containing inter alia :
 
 ## Main Page
 
- - Real time notifications. Top three hotels based on ranking. Blog section.
+ - Real time notifications. 
+ - Top three hotels based on ranking. 
+ - Blog section - three articles.
  
 <center>
   <img src="https://i.imgur.com/4wvdhoN.jpg"  alt="Github">
@@ -187,5 +189,40 @@ each user can:
 <center> 
   <img src="https://i.imgur.com/bMb1UB5.png"  alt="profile-edit">
 </center>
+
+## Blog 
+
+- blog articles
+
+<center> 
+  <img src="https://i.imgur.com/UlVYxSB.png"  alt="article">
+</center>
+
+## Moderator
+
+-
+
+<center> 
+  <img src="https://i.imgur.com/QxpBusK.png"  alt="article">
+</center>
+
+- add new article
+
+<center> 
+  <img src="https://i.imgur.com/5Pns1Av.png"  alt="article">
+</center>
+
+- edition of the current article
+
+<center> 
+  <img src="https://i.imgur.com/JbKAb4U.png"  alt="article">
+</center>
+
+- upload photos
+
+<center> 
+  <img src="https://i.imgur.com/lV3wYJV.png"  alt="article">
+</center>
+
 
 
