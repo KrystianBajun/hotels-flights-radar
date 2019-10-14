@@ -173,3 +173,17 @@ each user can:
 <center> 
   <img src="https://i.imgur.com/HnkuUjR.png"  alt="profile-edit">
 </center>
+
+## Admin
+
+- sending e-mail newsletter messages to users from database
+
+<center> 
+  <img src="https://i.imgur.com/3NRi3GZ.png"  alt="profile-edit">
+</center>
+
+- user management, deleting, adding new ones
+
+<center> 
+  <img src="https://i.imgur.com/3NRi3GZ.png"  alt="profile-edit">
+</center>
