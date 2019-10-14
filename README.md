@@ -20,18 +20,19 @@ Containing inter alia :
 - blog
 - real time api exchange rate 
 
-## Technologies used
+## Stack
 
 * Java
 * Spring
 * Hibernate
 * Thymeleaf
 * Bootstrap
+* Maven
+* H2 Database
 
 ### To do
 
 - [ ] Dockerizing 
-- [ ] Detailed description of the project
 
 
 ## Main Page
@@ -82,11 +83,17 @@ Four APIs are connected to the application :
 
 ## Trip summary
 
-- details about reservation, graph shows price information inter alia: minimal,highest,median, and average from last two years.
+- details about reservation 
 
 
 <center>
   <img src="https://i.imgur.com/sHytzS8.png" alt="Github">
+</center>
+
+-graph shows price information inter alia: minimal,highest,median, and average from last two years.
+
+<center>
+  <img src="https://i.imgur.com/xiZUbSN.png" alt="graphs">
 </center>
 
 ## Payment simulation
