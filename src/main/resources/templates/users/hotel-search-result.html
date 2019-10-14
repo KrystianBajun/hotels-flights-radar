@@ -4,11 +4,9 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>User Panel- list of the cheapest trips </title>
+    <title>List of the cheapest hotels</title>
     <meta charset="utf-8"/>
-
     <link rel="stylesheet" type="text/css" href="css/search-result.css"/>
-
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -34,12 +32,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="hotel, hstat: ${hotels}"
-                    th:unless="${hstat.index < 5}">
-
-
+                <tr th:each="hotel, i: ${hotels}"
+                    th:unless="${i.index < 5}">
                     <td th:text=" ${hotel.price}+ ${hotel.currency}"></td>
-
                     <td th:text="${hotel.name}"/>
                     </td>
                     <td th:text="${hotel.site}"/>
@@ -57,7 +52,6 @@
                             <button type="button" class="btn btn-info">confirm</button>
                         </a>
                     </td>
-
                     </td>
                 </tr>
                 </tbody>

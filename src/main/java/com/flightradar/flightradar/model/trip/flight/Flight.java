@@ -37,7 +37,6 @@ public class Flight {
 
     private String airlineIata;
 
-
     private BigDecimal highestPrice;
 
     private BigDecimal minimalPrice;

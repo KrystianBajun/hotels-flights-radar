@@ -13,7 +13,6 @@ public class Reservation {
     @OneToOne(mappedBy = "reservation")
     FinalTrip finalTrip;
 
-
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)

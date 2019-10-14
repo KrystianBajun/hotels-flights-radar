@@ -18,7 +18,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav">
-                    <li><a href="/hotels">Hotels <span class="sr-only">(current)</span></a></li>
                     <li sec:authorize="hasAnyRole('ADMIN')"><a href="/admin/addHotel">Add hotel</a></li>
                     <li sec:authorize="hasAnyRole('ADMIN')"><a href="/admin/dashboard">Dashboard (admin)</a></li>
                     <li sec:authorize="hasAnyRole('ADMIN')"><a href="/newsletter">Newsletter (admin)</a></li>

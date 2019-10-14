@@ -15,7 +15,8 @@
 <body>
 <div class="menu" >
     <div class="back"><i class="fa fa-chevron-left"></i>
-        <img th:src="${'/img/' + user.userProfile.avatar}" draggable="false"/>
+        <a href="/"></a>
+        <img th:src="${'/img/' + user.userProfile.avatar}"   draggable="false"/>
     </div>
     <div class="name">
         <p td th:text="${user.username}"/>
@@ -35,7 +36,7 @@
         </div>
     </li>
 </ol>
-<form action="form_2" th:action="@{send/{id}(id=${user.id})}" th:object="${Messages}" method="post">
+<form th:action="@{send/{id}(id=${user.id})}" th:object="${Messages}" method="post">
 
     <input class="textarea" type="text" th:field="*{message}" placeholder="Type here!" />
     </form>

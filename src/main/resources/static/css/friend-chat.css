@@ -22,7 +22,7 @@ a{
     right: 0px;
     width: 100%;
     height: 50px;
-    background: rgba(82,179,217,0.9);
+    background: rgba(0,172,237);
     z-index: 100;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -160,7 +160,7 @@ a{
 .self .msg {
     order: 1;
     border-bottom-right-radius: 0px;
-    box-shadow: 1px 2px 0px #f000f0;
+    box-shadow: 1px 2px 0px #1dcaff;
 }
 .self .avatar {
     order: 2;
@@ -284,7 +284,6 @@ emoji{
     display: block;
     height: 26px;
 }
-
 
 input.textarea {
     position: fixed;

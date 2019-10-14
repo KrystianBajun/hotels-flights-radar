@@ -47,7 +47,6 @@
 <div class="next-page">
 
     <h2>Flight Details</h2>
-    <p>To add a caption to a table, use the caption tag.</p>
 
     <table style="width:100%">
         <caption>Airline: [[${flight.airline}]]</caption>
@@ -71,8 +70,6 @@
 
 
     <h2>Hotel Details</h2>
-    <p>To add a caption to a table, use the caption tag.</p>
-
     <table style="width:100%">
         <caption>Hotel category: [[${hotel.category}]]</caption>
         <tr>
@@ -82,7 +79,6 @@
             <th>Phone number</th>
             <th>Date</th>
             <th>Price</th>
-
         </tr>
         <tr>
             <td>[[${hotel.name}]]</td>
@@ -92,10 +88,7 @@
             <td>[[${flight.departureTime}]] to [[${flight.returnTime}]]</td>
             <td>[[${hotel.price}]][[${hotel.currency}]]</td>
         </tr>
-
     </table>
-
-
     <h1>Total Price</h1>
     <table style="width:130%">
         <tr>
@@ -104,19 +97,13 @@
 
         </tr>
         <tr>
-
-
             <td>[[${totalPrice}]][[${hotel.currency}]]</td>
         </tr>
 
     </table>
-
-
 </div>
 
-
 </div>
-
 <div class='footer' th:include="pdf/footer::footer"></div>
 </body>
 

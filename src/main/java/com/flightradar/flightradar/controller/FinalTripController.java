@@ -47,7 +47,6 @@ public class FinalTripController {
             return "/";
     }
 
-
     @RequestMapping(value = "/summary/{id}", method = RequestMethod.GET)
     @AllowedForUsers
     public String tripSummary(@PathVariable("id") Long id, Model model) {

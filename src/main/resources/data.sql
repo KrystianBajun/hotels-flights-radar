@@ -53,7 +53,7 @@ VALUES
 (7, 'lester@microsoft.com', 'Lester Weed', 'pass', 'lester', 1,7),
 (8, 'human@gizmodo.com', 'Human man', 'pass', 'human', 1,8),
 (9, 'elf@darkwood.com', 'Dark Elf', 'pass', 'elf', 1,9),
-(10, 'Nerevarine@interlude.com', 'Morrowind Nerevarine', 'pass', 'kamael', 1,10),
+(10, 'Nerevarine@interlude.com', 'Morrowind Nerevarine', 'pass', 'morro', 1,10),
 (11, 'Shepard@ucoz.ru', 'Shepard Peters', 'pass', 'shepard', 1,11),
 (12, 'ur-shak@ucoz.ru', 'Ur-Shak ', 'pass', 'Orc', 1,12);
 

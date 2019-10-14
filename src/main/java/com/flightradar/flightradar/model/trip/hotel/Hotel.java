@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Entity
 @Component
-@Table(name = "hotel", uniqueConstraints = @UniqueConstraint(columnNames = {"site", "webRating", "phone", "name", "longitude", "latitude", "image3", "image2", "image", "hotelLink", "describe", "currency", "category", "address", "price"}))
+@Table(name = "hotel", uniqueConstraints = @UniqueConstraint(columnNames = {"name", "currency", "site", "price", "address", "webRating", "image", "image2", "image3","image4","hotelLink","phone", "describe", "currency", "category", "address"}))
 
 public class Hotel {
     private Long id;

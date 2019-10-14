@@ -52,18 +52,13 @@ public class UserController {
     @Autowired
     private
     CustomUserDetailsService customUserDetailsService;
-    @Autowired
-    private
-    FinalTripRepository finalTripRepository;
-    @Autowired
+     @Autowired
     private
     FriendsRepository friendsRepository;
     @Autowired
     private
     HotelRatingRepository hotelRatingRepository;
-    @Autowired
-    private
-    UserProfileRepository userProfileRepository;
+
     @Autowired
     private
     PostsRepository postsRepository;
@@ -398,6 +393,5 @@ public class UserController {
         }
         return friendsAcceptedList;
     }
-
 
 }
