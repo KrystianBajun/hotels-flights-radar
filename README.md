@@ -185,5 +185,7 @@ each user can:
 - user management, deleting, adding new ones
 
 <center> 
-  <img src="https://i.imgur.com/3NRi3GZ.png"  alt="profile-edit">
+  <img src="https://i.imgur.com/bMb1UB5.png"  alt="profile-edit">
 </center>
+
+
