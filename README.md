@@ -235,5 +235,18 @@ each user can:
   <img src="https://i.imgur.com/lV3wYJV.png"  alt="article">
 </center>
 
+## Email System
+
+- The application is connected to a Google email account.
+- Messages sent by users come to this email address
+- newsletter and messages are sent via this address
+
+
+<center> 
+  <img src="https://i.imgur.com/CryIdCW.png"  alt="article">
+</center>
+
+
+
 
 
