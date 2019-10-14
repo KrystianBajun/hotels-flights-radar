@@ -52,7 +52,7 @@ Five APIs are connected to the application :
 
 - the first one checks air connections
 - the second is responsible for providing information about hotels
-- the third one searches additional information in google for example the overall rating and hotel photos
+- the third one searches additional information in google for example overall rating and hotel photos
 - the fourth searches for information on historical flight prices
 - the app constantly updates the exchange rate so provide the real price of the trip
 
@@ -95,7 +95,7 @@ Five APIs are connected to the application :
 
 - the app calculates detailed price information
 - based on information provided by historical Api data
-- graph shows inter alia: minimal,highest, median, and average price from last two years.
+- graph shows inter alia: minimal, highest, median, and average price from last two years.
 
 <center>
   <img src="https://i.imgur.com/xiZUbSN.png" alt="graphs">
