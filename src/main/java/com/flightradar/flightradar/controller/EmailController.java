@@ -40,19 +40,11 @@ public class EmailController {
     public String sendContactMessage(@ModelAttribute("Contact") Contact contact) {
 
         Context context = new Context();
-        context.setVariable("title", contact.getTitle());
-        context.setVariable("phone", contact.getPhone());
-        context.setVariable("message", contact.getMessage());
-
-        if (CurrentUser().getUser().getId() < 0) {
-            context.setVariable("header", contact.getSender());
-        } else {
-            context.setVariable("userId", CurrentUser().getUser().getId());
-            context.setVariable("userName", CurrentUser().getUser().getUsername());
-        }
+        context.setVariable("contact", contact);
+        context.setVariable("user", CurrentUser().getUser());
 
         String body = templateEngine.process("email/email-template", context);
-        emailSender.sendEmail("tripsearchapp@outlook.com", "CodeCouple Newsletter", body);
+        emailSender.sendEmail("tripsearchapp@outlook.com", "Mail from User : "+CurrentUser().getUser().getUsername(), body);
 
         return "redirect:/";
     }
