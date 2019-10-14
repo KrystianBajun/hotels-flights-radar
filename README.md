@@ -200,7 +200,9 @@ each user can:
 
 ## Moderator
 
--
+- article management
+- three articles on the main page
+- adding post, deleting, editing, adding photos
 
 <center> 
   <img src="https://i.imgur.com/QxpBusK.png"  alt="article">
